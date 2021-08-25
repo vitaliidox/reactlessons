@@ -1,10 +1,14 @@
-import React from 'react'
+import React from "react";
 
-function TodoList(props){
-    return <React.Fragment key={props.key}>
-        <li>{props.text}</li>
-        <button onClick={props.delete}>delete</button>
+function TodoList(props) {
+  const { key, text, delet } = props;
+
+  return (
+    <React.Fragment key={key}>
+      <li>{text}</li>
+      <button onClick={delet}>delete</button>
     </React.Fragment>
+  );
 }
 
-export default TodoList
+export default TodoList;

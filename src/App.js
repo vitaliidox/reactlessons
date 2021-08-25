@@ -3,7 +3,6 @@ import Todo from "./components/Todo";
 import { useState, useEffect } from "react";
 
 function getTodoFromLocalStorage() {
-  console.log("get from local storage");
   return localStorage.getItem("todo") || "";
 }
 
@@ -23,7 +22,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("todo changed");
     localStorage.setItem("todo", todo);
   }, [todo]);
 
@@ -58,7 +56,7 @@ function App() {
             <Todo
               id={todo.id}
               text={todo.text}
-              delete={() => handleDeleteTodo(todo)}
+              delet={() => handleDeleteTodo(todo)}
             />
           </>
         ))}
